@@ -1,0 +1,188 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "builder.BuildWebsiteRunner",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_230944667 { 
+   	label=builder
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   BuildWebsiteRunner230944667[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BuildWebsiteRunner</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Director230944667[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Director</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   builder: WebsiteBuilder [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># buildWebsite(): Website</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+EnterpriseWebsiteBuilder230944667[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)EnterpriseWebsiteBuilder</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># buildCms()</TD></TR>
+<TR><TD ALIGN="LEFT" ># buildName()</TD></TR>
+<TR><TD ALIGN="LEFT" ># buildPrice()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+VisitCardWebsiteBuilder230944667[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)VisitCardWebsiteBuilder</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># buildCms()</TD></TR>
+<TR><TD ALIGN="LEFT" ># buildName()</TD></TR>
+<TR><TD ALIGN="LEFT" ># buildPrice()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Website230944667[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Website</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   cms: Cms [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   price: int [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+WebsiteBuilder230944667[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)WebsiteBuilder</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   website: Website [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># buildCms()</TD></TR>
+<TR><TD ALIGN="LEFT" ># buildName()</TD></TR>
+<TR><TD ALIGN="LEFT" ># buildPrice()</TD></TR>
+<TR><TD ALIGN="LEFT" ># createWebsite()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+BuildWebsiteRunner230944667 -> Director230944667[label="main() -> buildWebsite()"];
+Director230944667 -> WebsiteBuilder230944667[label="builder
+[0..1]"];
+WebsiteBuilder230944667 -> EnterpriseWebsiteBuilder230944667[arrowhead=none, arrowtail=empty, dir=both];
+WebsiteBuilder230944667 -> VisitCardWebsiteBuilder230944667[arrowhead=none, arrowtail=empty, dir=both];
+WebsiteBuilder230944667 -> Website230944667[label="website
+[0..1]"];
+    
+}
+@enduml

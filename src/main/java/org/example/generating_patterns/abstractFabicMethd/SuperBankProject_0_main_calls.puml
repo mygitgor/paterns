@@ -1,0 +1,237 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "abstractFabicMethd.SuperBankProject#main(String[])",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "abstractFabicMethd.SuperBankProject",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_11444541 { 
+   	label=bankProject
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_574763714 { 
+   	label=JavaDeveloper
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   JavaDeveloper394670728XXXwriteCod0[
+	label="+ writeCod()"
+	style=filled
+	fillcolor=white
+	tooltip="JavaDeveloper
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_619852939 { 
+   	label=QAtester
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   QAtester394670728XXXtestCod0[
+	label="+ testCod()"
+	style=filled
+	fillcolor=white
+	tooltip="QAtester
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_838744605 { 
+   	label=PManager
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PManager394670728XXXmanageProject0[
+	label="+ manageProject()"
+	style=filled
+	fillcolor=white
+	tooltip="PManager
+
+null"
+	fontcolor=darkgreen
+];
+} 
+} 
+
+subgraph cluster_1706480130 { 
+   	label=websiteProject
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1360292211 { 
+   	label=PhpDeveloper
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PhpDeveloper1038215981XXXwriteCod0[
+	label="+ writeCod()"
+	style=filled
+	fillcolor=white
+	tooltip="PhpDeveloper
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_431819869 { 
+   	label=WebsitePM
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   WebsitePM1038215981XXXmanageProject0[
+	label="+ manageProject()"
+	style=filled
+	fillcolor=white
+	tooltip="WebsitePM
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_808842624 { 
+   	label=ManualTester
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ManualTester1038215981XXXtestCod0[
+	label="+ testCod()"
+	style=filled
+	fillcolor=white
+	tooltip="ManualTester
+
+null"
+	fontcolor=darkgreen
+];
+} 
+} 
+
+subgraph cluster_335632455 { 
+   	label=abstractFabicMethd
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1974909047 { 
+   	label=SuperBankProject
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   SuperBankProject335632455XXXmain1859653459[
+	label="+ main()"
+	style=filled
+	fillcolor=white
+	tooltip="SuperBankProject
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+} 
+
+'edges    
+SuperBankProject335632455XXXmain1859653459 -> JavaDeveloper394670728XXXwriteCod0;
+SuperBankProject335632455XXXmain1859653459 -> ManualTester1038215981XXXtestCod0;
+SuperBankProject335632455XXXmain1859653459 -> PManager394670728XXXmanageProject0;
+SuperBankProject335632455XXXmain1859653459 -> PhpDeveloper1038215981XXXwriteCod0;
+SuperBankProject335632455XXXmain1859653459 -> QAtester394670728XXXtestCod0;
+SuperBankProject335632455XXXmain1859653459 -> WebsitePM1038215981XXXmanageProject0;
+    
+}
+@enduml
