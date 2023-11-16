@@ -1,0 +1,6 @@
+
+»
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(‘‹°Þúÿÿÿÿ8°Ô¬Ã½1
+S
+java:S2696"6Make the enclosing method "static" or remove this set.(ðà¾Ô8·Ô¬Ã½1
+G	java:S106"+Replace this use of System.out by a logger.(ÿž‚¼8¸Ô¬Ã½1
