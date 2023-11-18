@@ -1,0 +1,224 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "org.example.structural_patterrns.adapter.DatabaseRunner#main(String[])",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "org.example.structural_patterrns.adapter.DatabaseRunner",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_698294651 { 
+   	label=structural_patterrns
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_211747226 { 
+   	label=JavaApplication
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   JavaApplication2004829530XXXdeleteObject0[
+	label="+ deleteObject()"
+	style=filled
+	fillcolor=white
+	tooltip="JavaApplication
+
+null"
+	fontcolor=darkgreen
+];
+
+JavaApplication2004829530XXXloadObject0[
+	label="+ loadObject()"
+	style=filled
+	fillcolor=white
+	tooltip="JavaApplication
+
+null"
+	fontcolor=darkgreen
+];
+
+JavaApplication2004829530XXXsaveObject0[
+	label="+ saveObject()"
+	style=filled
+	fillcolor=white
+	tooltip="JavaApplication
+
+null"
+	fontcolor=darkgreen
+];
+
+JavaApplication2004829530XXXupdateObject0[
+	label="+ updateObject()"
+	style=filled
+	fillcolor=white
+	tooltip="JavaApplication
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_536453901 { 
+   	label=DatabaseRunner
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   DatabaseRunner2004829530XXXmain1859653459[
+	label="+ main()"
+	style=filled
+	fillcolor=white
+	tooltip="DatabaseRunner
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_625543327 { 
+   	label=AdapterJavaToDatabase
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   AdapterJavaToDatabase2004829530XXXinsert0[
+	label="+ insert()"
+	style=filled
+	fillcolor=white
+	tooltip="AdapterJavaToDatabase
+
+null"
+	fontcolor=darkgreen
+];
+
+AdapterJavaToDatabase2004829530XXXremove0[
+	label="+ remove()"
+	style=filled
+	fillcolor=white
+	tooltip="AdapterJavaToDatabase
+
+null"
+	fontcolor=darkgreen
+];
+
+AdapterJavaToDatabase2004829530XXXselect0[
+	label="+ select()"
+	style=filled
+	fillcolor=white
+	tooltip="AdapterJavaToDatabase
+
+null"
+	fontcolor=darkgreen
+];
+
+AdapterJavaToDatabase2004829530XXXupdate0[
+	label="+ update()"
+	style=filled
+	fillcolor=white
+	tooltip="AdapterJavaToDatabase
+
+null"
+	fontcolor=darkgreen
+];
+} 
+} 
+} 
+
+'edges    
+AdapterJavaToDatabase2004829530XXXinsert0 -> JavaApplication2004829530XXXsaveObject0;
+AdapterJavaToDatabase2004829530XXXremove0 -> JavaApplication2004829530XXXdeleteObject0;
+AdapterJavaToDatabase2004829530XXXselect0 -> JavaApplication2004829530XXXloadObject0;
+AdapterJavaToDatabase2004829530XXXupdate0 -> JavaApplication2004829530XXXupdateObject0;
+DatabaseRunner2004829530XXXmain1859653459 -> AdapterJavaToDatabase2004829530XXXinsert0;
+DatabaseRunner2004829530XXXmain1859653459 -> AdapterJavaToDatabase2004829530XXXremove0;
+DatabaseRunner2004829530XXXmain1859653459 -> AdapterJavaToDatabase2004829530XXXselect0;
+DatabaseRunner2004829530XXXmain1859653459 -> AdapterJavaToDatabase2004829530XXXupdate0;
+    
+}
+@enduml
