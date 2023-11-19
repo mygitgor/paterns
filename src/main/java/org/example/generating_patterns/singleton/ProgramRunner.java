@@ -1,4 +1,4 @@
-package org.example.generating_patterns.sinleton;
+package org.example.generating_patterns.singleton;
 
 public class ProgramRunner {
     public static void main(String[] args) {
