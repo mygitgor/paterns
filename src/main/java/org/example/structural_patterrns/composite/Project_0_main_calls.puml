@@ -1,0 +1,187 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "org.example.structural_patterrns.composite.Project#main(String[])",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "org.example.structural_patterrns.composite.Project",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_698294651 { 
+   	label=structural_patterrns
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_1802616243 { 
+   	label=Team
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Team2063790050XXXaddDeveloper1923286954[
+	label="+ addDeveloper()"
+	style=filled
+	fillcolor=white
+	tooltip="Team
+
+null"
+	fontcolor=darkgreen
+];
+
+Team2063790050XXXcreateProject0[
+	label="+ createProject()"
+	style=filled
+	fillcolor=white
+	tooltip="Team
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_392774313 { 
+   	label=CppDeveloper
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   CppDeveloper2063790050XXXwriteCode0[
+	label="+ writeCode()"
+	style=filled
+	fillcolor=white
+	tooltip="CppDeveloper
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_628977192 { 
+   	label=JavaDeveloper
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   JavaDeveloper2063790050XXXwriteCode0[
+	label="+ writeCode()"
+	style=filled
+	fillcolor=white
+	tooltip="JavaDeveloper
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_634321623 { 
+   	label=Project
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Project2063790050XXXmain1859653459[
+	label="+ main()"
+	style=filled
+	fillcolor=white
+	tooltip="Project
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+} 
+} 
+
+'edges    
+Project2063790050XXXmain1859653459 -> Team2063790050XXXaddDeveloper1923286954;
+Project2063790050XXXmain1859653459 -> Team2063790050XXXcreateProject0;
+Team2063790050XXXcreateProject0 -> CppDeveloper2063790050XXXwriteCode0;
+Team2063790050XXXcreateProject0 -> JavaDeveloper2063790050XXXwriteCode0;
+    
+}
+@enduml
